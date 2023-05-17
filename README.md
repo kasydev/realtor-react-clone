@@ -3,6 +3,7 @@
 ### Technologies and tools used to build this includes:
 - React.js, Firebase, TailwindCSS.
 - Leaflet, Swipperjs, Google geolcation API, Image Slider.
+- Hosted on Vercel => https://realtor-react-clone.vercel.app/
 
 #### Screenshots below:
 - ![img 1](https://github.com/kasydev/realtor-react-clone/assets/125959390/5d826000-a3d8-43a9-95cb-b37c6adc4cfc)

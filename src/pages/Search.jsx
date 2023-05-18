@@ -14,29 +14,37 @@ const Search = () => {
 
   useEffect(() => {
     const fetchListings = async () => {
-      try {
-        const listingsRef = collection(db, "listings");
-        const querySnap = await getDocs(listingsRef);
-        const listingsData = querySnap.docs.map((doc) => doc.data());
-        const filteredListings = listingsData.filter((listing) =>
-          searchTerms.some((term) => listing.name.toLowerCase().includes(term))
-        );
-        setListings(filteredListings);
-        setLoading(false);
-        
-      } catch (error) {
-        console.log(error);
-        toast.error("Error fetching search results");
-      }
-    };
+  try {
+    const listingsRef = collection(db, "listings");
+    const querySnap = await getDocs(listingsRef);
+    const listingsData = querySnap.docs.map((doc) => {
+      const data = doc.data();
+      return { id: doc.id, ...data }; // Include the document id in the listing data
+    });
+    const filteredListings = listingsData.filter((listing) =>
+      searchTerms.some((term) => listing.name.toLowerCase().includes(term))
+    );
+    setListings(filteredListings);
+    setLoading(false);
+  } catch (error) {
+    console.log(error);
+    toast.error("Error fetching search results");
+  }
+};
+
 
     fetchListings();
   }, [searchTerms]);
 
     useEffect(() => {
-      if (!loading) {
+      if (!loading && listing.length > 0) {
         toast.success("Results fetched successfully");
       }
+     else {
+
+       toast.error("Could not fetch any data");
+
+}
     }, [loading]);
 
   return (

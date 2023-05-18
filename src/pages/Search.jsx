@@ -37,7 +37,7 @@ const Search = () => {
   }, [searchTerms]);
 
     useEffect(() => {
-      if (!loading && listing.length > 0) {
+      if (!loading && listings.length > 0) {
         toast.success("Results fetched successfully");
       }
      else {

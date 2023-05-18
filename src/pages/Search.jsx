@@ -26,6 +26,15 @@ const Search = () => {
     );
     setListings(filteredListings);
     setLoading(false);
+     if(!loading && listings.length > 0){
+      toast.success("Items fetched successfully");
+}
+
+else{
+
+toast.error("Coult not fetch the search item");
+
+}
   } catch (error) {
     console.log(error);
     toast.error("Error fetching search results");
@@ -36,16 +45,7 @@ const Search = () => {
     fetchListings();
   }, [searchTerms]);
 
-    useEffect(() => {
-      if (!loading && listings.length > 0) {
-        toast.success("Results fetched successfully");
-      }
-     else {
-
-       toast.error("Could not fetch any data");
-
-}
-    }, [loading]);
+    
 
   return (
     <div className="max-w-6xl mx-auto px-3">

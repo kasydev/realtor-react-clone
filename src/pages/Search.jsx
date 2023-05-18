@@ -44,11 +44,7 @@ if(!loading && listings.length > 0){
       toast.success("Items fetched successfully");
 }
 
-else{
 
-toast.error("Coult not fetch the search item");
-
-}
 
 },[loading]);
 

@@ -1,6 +1,6 @@
 # Realtor Estate Web App.
 - You can sell or rent apartments across the globe.
-### Technologies and tools used to build this include:
+### Technologies and Tools used to build this include:
 - React.js, Firebase, TailwindCSS.
 - Leaflet, Swipperjs, Google geolocation API, Image Slider.
 - Hosted on Vercel => https://realtor-react-clone.vercel.app/
